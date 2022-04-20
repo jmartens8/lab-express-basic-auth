@@ -7,7 +7,12 @@ const userSchema = new Schema({
     unique: true
   },
   password: String
-});
+},
+{
+  // this second object adds extra properties: `createdAt` and `updatedAt`
+  timestamps: true,
+}
+);
 
 const User = model("User", userSchema);
 
